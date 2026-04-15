@@ -34,7 +34,11 @@ document.getElementById('imageUpload').addEventListener('change', async (event) 
         const predictions = await model.predict(tensor).data();
         
         // 4. Display results (Assumes a classification model)
-        status.innerText = `Prediction (Normal , Defective): ${predictions}`; 
+        // status.innerText = `Prediction (Normal , Defective): ${predictions}`; 
+        // predictions is [0] (Normal) or [1] (Defective)
+        const label = predictions[0] > 0.5 ? "Defective" : "Normal";                
+        status.innerText = `Prediction: ${label}`;        
+        
     };
 });
 
