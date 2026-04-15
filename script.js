@@ -37,7 +37,7 @@ document.getElementById('imageUpload').addEventListener('change', async (event) 
         // status.innerText = `Prediction (Normal , Defective): ${predictions}`; 
         // predictions is [0] (Normal) or [1] (Defective)
         const label = predictions[0] > 0.5 ? "Normal" : "Defective";                
-        status.innerText = `Prediction: ${label}`;        
+        status.innerText = `Prediction: ${label} ${predictions}`;        
         
     };
 });
