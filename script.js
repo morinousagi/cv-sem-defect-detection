@@ -27,9 +27,9 @@ document.getElementById('imageUpload').addEventListener('change', async (event) 
         const tensor = tf.browser.fromPixels(imgElement)
             .resizeNearestNeighbor([224, 224]) // Adjust size to match your model
             .toFloat()
-            .sub(127.5) // Mean normalization
-            .div(127.5) // Scale to -1 to 1
-            .expandDims();
+            .div(tf.scalar(127.5))             // Scale 0-255 to 0-2
+            .sub(tf.scalar(1))                 // Shift 0-2 to -1-1
+            .expandDims();                    // Add batch dimensio
 
         const predictions = await model.predict(tensor).data();
         
