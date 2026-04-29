@@ -1,6 +1,6 @@
 # SEM Images Defect Detection
 
-[Link to demo app at GitHub Page](https://morinousagi.github.io/cv-sem-defect-detection/)
+A minimal demo app was deployed to [GitHub Page](https://morinousagi.github.io/cv-sem-defect-detection).
 
 ## Dataset
 
